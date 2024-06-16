@@ -1,0 +1,25 @@
+// Маршрут для веб-хука
+app.post('/webhook', (req, res) => {
+    const paymentData = req.body;
+
+    console.log('Получен платеж:', paymentData);
+
+    if (paymentData.status === 'paid') {
+        const userId = paymentData.userId;
+        const amount = parseFloat(paymentData.amount);
+
+        if (paymentData.order_id.startsWith('order_balance_')) {
+            updateUserBalance(userId, amount);
+        } else if (paymentData.order_id.startsWith('order_account_')) {
+            const accountId = parseInt(paymentData.order_id.split('_')[3], 10);
+
+            const account = getAccountById(accountId);
+            if (account) {
+                sendAccountDetails(userId, account);
+                deleteAccount(accountId);
+            }
+        }
+    }
+
+    res.status(200).send('OK');
+});

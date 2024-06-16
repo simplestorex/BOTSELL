@@ -1,0 +1,44 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "login": "account1_login",
+      "password": "account1_password",
+      "token": "account1_token",
+      "email": "account1_email@example.com",
+      "price": "$10",
+      "description": "Описание аккаунта 1",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "login": "account2_login",
+      "password": "account2_password",
+      "token": "account2_token",
+      "email": "account2_email@example.com",
+      "price": "$20",
+      "description": "Описание аккаунта 2",
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "login": "account3_login",
+      "password": "account3_password",
+      "token": "account3_token",
+      "email": "account3_email@example.com",
+      "price": "$25",
+      "description": "Описание аккаунта 3",
+      "categoryId": 1
+    },
+    {
+      "id": 4,
+      "login": "login 400",
+      "password": "account3_password",
+      "token": "account3_token",
+      "email": "account3_email@example.com",
+      "price": "$500",
+      "description": "Account Twitter 500",
+      "categoryId": 3
+    }
+  ]
+}

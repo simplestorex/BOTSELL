@@ -1,0 +1,15 @@
+app.listen(port, () => {
+    console.log(`Сервер запущен на порту ${port}`);
+
+    // Установка веб-хука
+    const botToken = '7224913597:AAGLGC18TDFzOI9Cfe57Iuul-VsTkdBs6fo';
+    const webhookUrl = `https://.up.railway.app/webhook`;
+
+    axios.get(`https://api.telegram.org/bot${botToken}/setWebhook?url=${webhookUrl}`)
+        .then(response => {
+            console.log('Webhook установлен:', response.data);
+        })
+        .catch(error => {
+            console.error('Ошибка при установке веб-хука:', error);
+        });
+});
